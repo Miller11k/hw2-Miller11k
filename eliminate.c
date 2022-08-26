@@ -30,7 +30,13 @@ void eliminate(int n, int k)
   int num_left = size_array;
   int count = 0;
 
-  for(i = 0; i < size_array; ++i)
+ 
+  // counting to k,
+  // mark the eliminated element
+  // print the index of the marked element
+  // repeat until only one element is unmarked
+
+ for(i = 0; i < size_array; ++i)
   {
     arr[i] = 1;
   }
@@ -41,10 +47,10 @@ void eliminate(int n, int k)
     {
       for(j = 0; j < size_array; ++j)
       {
-        if arr[j] !=0
+        if (arr[j] !=0)
         {
           arr[j] = ++count;
-          if (arr[j] = target)
+          if (arr[j] == target)
           {
             count = 0;
             arr[j] = count;
@@ -58,17 +64,16 @@ void eliminate(int n, int k)
   }
 
 
-  
-  // counting to k,
-  // mark the eliminated element
-  // print the index of the marked element
-  // repeat until only one element is unmarked
-
-
 
 
   // print the last one
-
+  for(i = 0; i < size_array; ++i)
+  {
+    if(arr[i] != 0)
+    {
+      printf("%d", i);
+    }
+  }
 
 
 
