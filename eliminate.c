@@ -23,6 +23,39 @@ void eliminate(int n, int k)
   // expressions like a[i]
 	
   // initialize all elements
+  int i;
+  int j;
+  int size_array = n;
+  int target = k;
+  int num_left = size_array;
+  int count = 0;
+
+  for(i = 0; i < size_array; ++i)
+  {
+    arr[i] = 1;
+  }
+
+  for(i = 0; i <= size_array; ++i)
+  {
+    while (num_left != 1)
+    {
+      for(j = 0; j < size_array; ++j)
+      {
+        if arr[j] !=0
+        {
+          arr[j] = ++count;
+          if (arr[j] = target)
+          {
+            count = 0;
+            arr[j] = count;
+            printf("%d\n", j);
+            --num_left;
+          }
+        }
+      }
+      
+    }
+  }
 
 
   
