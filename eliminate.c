@@ -36,26 +36,26 @@ void eliminate(int n, int k)
   // print the index of the marked element
   // repeat until only one element is unmarked
 
- for(i = 0; i < size_array; ++i)
+ for(i = 0; i < size_array; ++i) // Sets all numbers into the array to a starting value of 1
   {
     arr[i] = 1;
   }
 
-  for(i = 0; i <= size_array; ++i)
+  for(i = 0; i <= size_array; ++i) // Runs the eliminations until there is 1 left
   {
-    while (num_left != 1)
+    while (num_left != 1) // While there is more than one person left, code still runs
     {
-      for(j = 0; j < size_array; ++j)
+      for(j = 0; j < size_array; ++j) // Runs the cake game but skips counting any person who is eliminated (is a 0)
       {
-        if (arr[j] !=0)
+        if (arr[j] !=0) // Skips those who are out
         {
-          arr[j] = ++count;
-          if (arr[j] == target)
+          arr[j] = ++count; // Increase count
+          if (arr[j] == target) // If target number is reached
           {
-            count = 0;
-            arr[j] = count;
-            printf("%d\n", j);
-            --num_left;
+            count = 0; // Reset the count
+            arr[j] = count; // Eliminate player
+            printf("%d\n", j); // Print person
+            --num_left; // Decrease number of players left
           }
         }
       }
@@ -69,9 +69,9 @@ void eliminate(int n, int k)
   // print the last one
   for(i = 0; i < size_array; ++i)
   {
-    if(arr[i] != 0)
+    if(arr[i] != 0) // Find the one element left
     {
-      printf("%d", i);
+      printf("%d\n", i); // Print the position
     }
   }
 
